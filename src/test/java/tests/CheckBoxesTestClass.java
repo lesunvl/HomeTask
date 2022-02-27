@@ -5,15 +5,15 @@ import org.testng.annotations.Test;
 import pages.CheckBoxesPage;
 
 
-public class CheckBoxesTest extends CheckBoxesPage {
+public class CheckBoxesTestClass extends CheckBoxesPage {
 
-    public CheckBoxesTest(WebDriver driver) {
+    public CheckBoxesTestClass(WebDriver driver) {
         super(driver);
     }
 
     @Test
     public void test1(){
-        CheckBoxesTest check = new CheckBoxesTest(driver);
+        CheckBoxesTestClass check = new CheckBoxesTestClass(driver);
         if(check.allcheckBox.isSelected()){
             System.out.println("Checkbox is ON");
         } else {

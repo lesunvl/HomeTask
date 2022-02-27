@@ -4,20 +4,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import tests.BaseTest;
 
-public class FramesPage extends BaseTest {
+public class FramesPage extends BasePage {
     protected WebDriver driver;
 
     public FramesPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(linkText = "Inputs")
-    public WebElement frame;
+    @FindBy(linkText = "")
+    public WebElement frameChild;
 
-    @FindBy(linkText = "User-Mgt")
+    @FindBy(linkText = "")
     public WebElement bodyTinymce;
 
 }

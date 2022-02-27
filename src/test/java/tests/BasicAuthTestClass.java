@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.BasicAuthPage;
@@ -47,18 +48,17 @@ public class BasicAuthTestClass extends BaseTest {
         logger.pass("This is pass message detail");
         screenshot.takeScreenshotAndLog();
     }
+
+    @AfterMethod
+    public void Validation() {
+        String actualURL = "";
+        String expectedURL = driver.getCurrentUrl();
+
+        if(actualURL.equalsIgnoreCase(expectedURL)) {
+            System.out.println("Test Passed");
+        } else {
+            System.out.println("Test Failed");
+        }
+    }
+
 }
-
-//    @AfterMethod
-//    public void BasicAuthTest() {
-//        String actualURL = "";
-//        String expectedURL = driver.getCurrentUrl();
-//
-//        if(actualURL.equalsIgnoreCase(expectedURL)) {
-//            System.out.println("Test Passed")
-//        } else {
-//            System.out.println("Test Failed");
-//        }
-//    }
-
-//}

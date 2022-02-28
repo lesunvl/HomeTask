@@ -1,13 +1,14 @@
 package tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.CheckBoxesPage;
 
-import java.util.List;
 
 public class CheckBoxesTestClass extends BaseTest {
+    public static Logger log = LogManager.getLogger(BaseTest.class.getName());
     CheckBoxesPage boxes;
 
     public CheckBoxesTestClass() {
@@ -15,16 +16,32 @@ public class CheckBoxesTestClass extends BaseTest {
 
     }
 
+
+
     @Test
     public void test1() {
 
-        // Traverse the web elements to extrat the text. Text gets added to the 'currentOptions' List
-        List<WebElement> boxes = driver.findElements(By.tagName("option"));
+        driver.findElement(By.cssSelector("a[href='/checkboxes']")).click();
 
-        for (WebElement cb : boxes) {
-            cb.click();
-        }
-        System.out.println("All check boxes have been checked");
+//        List<WebElement> oldBoxes = driver.findElements(By.name("ff"));
+//
+//        for (WebElement cb : oldBoxes) {
+//            cb.click();
+//            System.out.println(cb);
+//        }
+//        System.out.println("All check boxes have been checked");
+//
+//        List<WebElement> newBoxes = driver.findElements(By.tagName("option"));
+//
+//        for (WebElement cb2 : newBoxes) {
+//            cb2.click();
+//            System.out.println(cb2);
+//        }
+//        //verify the lists are not equal
+//        if(!oldBoxes.equals(newBoxes)) {
+//            System.out.println("Test Passed");
+//        }
+
+
     }
-
 }

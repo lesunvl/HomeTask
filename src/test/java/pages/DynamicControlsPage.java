@@ -15,10 +15,10 @@ public class DynamicControlsPage extends BasePage {
 
     }
 
-        @FindBy(id = "login")
+        @FindBy(xpath = "(//a[normalize-space()='iFrame'])[1]")
         public WebElement checkbox;
 
-        @FindBy(xpath = "//*")
+        @FindBy(xpath = "//button[normalize-space()='Remove']")
         public WebElement removeBtn;
 
 }

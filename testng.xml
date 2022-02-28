@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Sample Test Suite >
 
-    <test name="" >
-    <parameter name="browserName" value="chrome"/>
+<suite name="Sample Test Suite" >
+           <groups>
+           <define name="smoke"/>
+           <define name="regression"/>
+           </groups>
+    <test name="Extent Report Test">
         <classes>
-            <class name="test.java.CheckBoxTest"/>
+            <class name="tests.MenuTestClass">
             </class>
         </classes>
     </test>

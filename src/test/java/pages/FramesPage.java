@@ -14,10 +14,10 @@ public class FramesPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(linkText = "")
-    public WebElement frameChild;
+    @FindBy(css = "(//a[normalize-space()='iFrame'])[1]")
+    public WebElement frameStart;
 
-    @FindBy(linkText = "")
+    @FindBy(xpath = "//iframe[@id='mce_0_ifr']")
     public WebElement bodyTinymce;
 
 }

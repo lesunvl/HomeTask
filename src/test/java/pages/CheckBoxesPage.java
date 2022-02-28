@@ -14,10 +14,11 @@ public class CheckBoxesPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "Password")
+
+    @FindBy(xpath = "//input[1]")
     public WebElement checkBox1;
 
-    @FindBy(id = "Password")
+    @FindBy(xpath = "//input[2]")
     public WebElement checkBox2;
 
 }

@@ -1,11 +1,14 @@
 package tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.BasicAuthPage;
 
 public class BasicAuthTestClass extends BaseTest {
+    public static Logger log = LogManager.getLogger(BaseTest.class.getName());
     BasicAuthPage basic;
 
     @BeforeMethod
@@ -51,7 +54,7 @@ public class BasicAuthTestClass extends BaseTest {
 
     @AfterMethod
     public void Validation() {
-        String actualURL = "";
+        String actualURL = "http://the-internet.herokuapp.com/basic_auth";
         String expectedURL = driver.getCurrentUrl();
 
         if(actualURL.equalsIgnoreCase(expectedURL)) {

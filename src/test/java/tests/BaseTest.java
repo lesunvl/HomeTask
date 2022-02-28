@@ -9,16 +9,16 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import utils.ConfigReader;
 import utils.Screenshot;
 
-import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
@@ -37,6 +37,8 @@ public class BaseTest {
 
     protected Test test;
     protected Screenshot screenshot;
+
+    public static Logger log = LogManager.getLogger(BaseTest.class.getName());
 
     @BeforeTest
     public void startReport() throws IOException {
@@ -71,6 +73,7 @@ public class BaseTest {
         logger.info(test.description());
 
         initializeDriver();
+        log.info("Driver is initialized");
         screenshot = new Screenshot(driver, logger);
     }
 
@@ -97,9 +100,6 @@ public class BaseTest {
 
 
     private void initializeDriver() {
-
-        ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("/Users/vladlesun/Downloads"));
 
         switch (ConfigReader.readProperty(filePath, "browser").toLowerCase()) {
             case "chrome":

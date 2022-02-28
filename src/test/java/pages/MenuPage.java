@@ -15,16 +15,16 @@ public class MenuPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "Password")
+    @FindBy(css = "a[href='/jqueryui/menu']")
     public WebElement menuMain;
 
-    @FindBy(id = "Password")
+    @FindBy(xpath = "#ui-id-2")
     public WebElement menuEnable;
 
-    @FindBy(id = "login")
+    @FindBy(id = "ui-id-4")
     public WebElement menuDownloads;
 
-    @FindBy(xpath = "//*")
+    @FindBy(xpath = "//div[@class='example']//div//li//a[contains(text(),'Excel')]")
     public WebElement menuExcel;
 
 
